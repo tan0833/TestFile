@@ -1,0 +1,48 @@
+3.查看整个文件内容：
+	cat aa.txt
+	more aa.txt
+	less aa.txt
+4.查看部分文件内容：
+	查看最后10行：tail -n 10 aa.txt
+	查看头10行：head -n 10 aa.txt
+
+		
+更多的bash shell
+1.监测程序：
+	ps -ef 查看进程
+	top 实时监测进程
+		第一行显示了当前时间，系统运行时间，
+			登录用户数及系统的平均负载
+		第二行显示任务（task）多少进程在运行，
+			休眠，停止或僵尸化
+		第三行显示CPU概要信息
+		第四行显示内存状态
+	killall http* 结束进程
+
+2.监测磁盘空间：
+	mount	挂载存储媒体
+	df -h	查看某个设备有多少空间
+	du -h	查看某个特定目录磁盘使用情况
+
+3.处理数据文件：
+	排序：sort 
+		sort -n file1	按值排序
+		sort -M file1	按月排序
+		du -sh * | sort -nr	(-n代表数字，-r降序)
+	搜索数据：grep
+		grep -v bb aa.txt	搜索不匹配的行
+		grep -n bb aa.txt	匹配模式的行号
+		grep -c bb aa.txt	匹配的行数
+		grep [bba] aa.txt	正则匹配
+		grep -e bb -e a aa.txt	多个匹配模式
+	压缩数据：
+		gzip aa.txt		压缩文件
+		gzcat aa.txt	查看压缩过的内容
+		gunzip aa.txt	解压文件
+	归档数据：
+		tar -cvf text.tar test/ test2/	创建归档文件text.tar
+		tar -xvf test.tar		
+		tar -zxvf test.tar.tgz		解压
+	
+
+
